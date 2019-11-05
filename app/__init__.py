@@ -9,3 +9,14 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app import routes, models
+
+app.config.update(
+	DEBUG=True,
+	#EMAIL SETTINGS
+	MAIL_SERVER='smtp.gmail.com',
+	MAIL_PORT=465,
+	MAIL_USE_SSL=True,
+	MAIL_USERNAME = 'nurudeenakindele@gmail.com',
+	MAIL_PASSWORD = 'mummy288'
+	)
+mail = Mail(app)
